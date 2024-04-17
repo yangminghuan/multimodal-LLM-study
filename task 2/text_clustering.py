@@ -40,7 +40,6 @@ if __name__ == '__main__':
     cluster_data = pd.DataFrame(data=X.toarray(), columns=cols)
     # print(cluster_data.head())
 
-
     # 定义k-means聚类模型，对问题文本进行聚类分组
     k_means = KMeans(n_clusters=4, n_init='auto', random_state=2024)
     k_means.fit(cluster_data)

@@ -10,3 +10,5 @@ from pathlib import Path
 root_path = Path(__file__).parent
 data_path = root_path.joinpath('dataset')
 
+
+ZHIPUAI_API_KEY = ""  # 此处填写自己申请的智谱AI的key
