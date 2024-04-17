@@ -13,3 +13,16 @@ model_path = root_path.joinpath('models')
 images_path = data_path.joinpath('images')
 
 ZHIPUAI_API_KEY = ""  # 此处填写自己申请的智谱AI的key
+
+# if __name__ == '__main__':
+#     import requests
+#     import base64
+#
+#     url = "http://34.143.180.202:3389/viscpm"
+#     resp = requests.post(url, json={
+#         # need to modify
+#         "image": base64.b64encode(open(images_path.joinpath("scqxwrymypdzdefummyj.jpg"), "rb").read()).decode(),
+#         "question": "描述一下这张图片",
+#     })
+#     resp = resp.json()
+#     print(resp)

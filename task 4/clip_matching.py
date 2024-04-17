@@ -34,7 +34,7 @@ if __name__ == '__main__':
         'input_ids']
 
     # 加载CLIP的image encoder
-    img_path = images_path.joinpath("scqxwrymypdzdefummyj.jpg")
+    img_path = images_path.joinpath("scqxwrymypdzdefummyj.jpg")  # 加载图片路径
     clip_model = CLIPModel.from_pretrained(
         model_path.joinpath("clip-vit-base-patch32"))
     processor = CLIPProcessor.from_pretrained(
