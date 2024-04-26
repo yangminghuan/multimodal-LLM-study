@@ -5,40 +5,12 @@
 # @Description: 通过大模型对问题进行分类（图片描述类、细节查询类、细节判断类、图文匹配类）
 
 import json
-import time
-import jwt
 import pandas as pd
 from langchain_community.chat_models import ChatOpenAI
 from langchain_core.output_parsers import StrOutputParser
 from langchain.prompts import PromptTemplate, ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
-from utils import data_path, ZHIPUAI_API_KEY
-
-
-def generate_token(apikey: str, exp_seconds: int):
-    """
-    生成token令牌
-    :param apikey: 接口key
-    :param exp_seconds: 令牌有效时间（秒）
-    :return:
-    """
-    try:
-        id, secret = apikey.split(".")
-    except Exception as e:
-        raise Exception("invalid apikey", e)
-
-    payload = {
-        "api_key": id,
-        "exp": int(round(time.time() * 1000)) + exp_seconds * 1000,
-        "timestamp": int(round(time.time() * 1000)),
-    }
-
-    return jwt.encode(
-        payload,
-        secret,
-        algorithm="HS256",
-        headers={"alg": "HS256", "sign_type": "SIGN"},
-    )
+from utils import data_path, ZHIPUAI_API_KEY, generate_token
 
 
 if __name__ == '__main__':
